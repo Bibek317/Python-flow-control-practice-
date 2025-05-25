@@ -1,0 +1,29 @@
+destination = input("Enter your destination (Domestic/International): ").lower().strip()
+travel_class = input("Enter your class (Business/Economy): ").lower().strip()
+membership = input("Do you have membership? (Yes/No): ").lower().strip()
+trip_cost = int(input("Enter your trip cost: "))
+
+discount = 0
+
+if destination == "domestic" and travel_class == "economy":
+    discount = 5
+elif destination == "domestic" and travel_class == "business":
+    discount = 10
+elif destination == "international" and travel_class == "economy":
+    discount = 10
+elif destination == "international" and travel_class == "business":
+    discount = 15
+else:
+    print("Invalid input. Please check your destination and class.")
+
+# Apply membership discount
+if discount > 0:
+    if membership == "yes":
+        discount += 5
+
+    total_discount = trip_cost * (discount / 100)
+    final_cost = trip_cost - total_discount
+
+    print(f"\nYour total discount is {discount}%")
+    print(f"Discount Amount: Rs. {total_discount}")
+    print(f"Final Price after discount: Rs. {final_cost}")
