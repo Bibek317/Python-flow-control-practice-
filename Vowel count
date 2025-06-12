@@ -1,0 +1,8 @@
+def vowel_count():
+    word = str(input("Enter a word:")).lower()
+    vowel = 0
+    for char in word:
+        if char in ('a' , 'e' , 'i' , 'o' , 'u'):
+            vowel += 1
+    print(f"The total vowel in given word is {vowel}")       
+vowel_count()    
